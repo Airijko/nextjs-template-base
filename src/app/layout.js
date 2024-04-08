@@ -1,20 +1,27 @@
 import "@styles/globals.css";
 
+import Nav from "@components/Nav";
+import Provider from "@components/Provider";
+
 export const metadata = {
-    title: "Webever Edu",
-    description: "Webever Edu - Learn to code with us!",
+    title: "NextJS 14 Template",
+    description: "A NextJS 14 template with TailwindCSS and Google OAuth",
 };
 
 const RootLayout = ({ children }) => {
     return (
         <html lang="en">
             <body>
-                <div className="main">
-                    <div className="gradient" />
-                </div>
-                <main className="app">
-                    {children}
-                </main>
+                <Provider>
+                    <div className="main">
+                        <div className="gradient" />
+                    </div>
+
+                    <main className="app">
+                        <Nav />
+                        {children}
+                    </main>
+                </Provider>
             </body>
         </html>
     );
